@@ -4,47 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Environmental Awareness Through Social Media</title>
-  <link rel="stylesheet" href="App.css">
-  <!-- React & ReactDOM from CDN -->
+
+  <!-- React & ReactDOM CDN -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js"></script>
+
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background: #f4f9f4; color: #333; }
+    a { text-decoration: none; color: #2e7d32; }
+    a:hover { color: #1b5e20; }
+    header { padding:1rem; background:#2e7d32; color:white; }
+    header nav { display:flex; gap:1rem; flex-wrap:wrap; }
+    .container { max-width:1200px; margin:0 auto; padding:1rem; }
+    .section { margin:2rem 0; }
+    h1,h2,h3 { margin:0 0 1rem 0; }
+    .heading-1 { font-size:2rem; font-weight:700; }
+    .heading-2 { font-size:1.5rem; font-weight:600; }
+    .heading-3 { font-size:1.25rem; font-weight:500; }
+    .body-large { font-size:1.125rem; }
+    .body-medium { font-size:1rem; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; }
+    .card { background:white; padding:1rem; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    .btn-primary, .btn-secondary { display:inline-block; padding:0.5rem 1rem; border-radius:8px; font-weight:600; }
+    .btn-primary { background:#2e7d32; color:white; }
+    .btn-secondary { background:#f4f9f4; color:#2e7d32; border:1px solid #2e7d32; }
+    footer { padding:1rem; background:#1b5e20; color:white; text-align:center; }
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .stats-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:1rem; }
+    .stat-card { background:#e6f2e6; padding:1rem; border-radius:8px; text-align:center; }
+  </style>
 </head>
 <body>
   <div id="root"></div>
 
-  <!-- Your React components -->
   <script type="text/javascript">
     const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
 
-    // Header Component
+    // Header
     const Header = () => (
-      <header style={{ padding: "1rem", background: "#2e7d32", color: "white" }}>
-        <nav style={{ display: "flex", gap: "1rem" }}>
-          <Link to="/" style={{ color: "white" }}>Home</Link>
-          <Link to="/about" style={{ color: "white" }}>About</Link>
-          <Link to="/strategies" style={{ color: "white" }}>Strategies</Link>
-          <Link to="/case-studies" style={{ color: "white" }}>Case Studies</Link>
-          <Link to="/resources" style={{ color: "white" }}>Resources</Link>
+      <header>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/strategies">Strategies</Link>
+          <Link to="/case-studies">Case Studies</Link>
+          <Link to="/resources">Resources</Link>
         </nav>
       </header>
     );
 
-    // Footer Component
+    // Footer
     const Footer = () => (
-      <footer style={{ padding: "1rem", background: "#1b5e20", color: "white", marginTop: "2rem" }}>
+      <footer>
         <p>&copy; 2025 Environmental Awareness. All Rights Reserved.</p>
       </footer>
     );
 
-    // Pages (simplified content for demo)
-    const Home = () => <div><h1>Home Page</h1><p>Welcome to Environmental Awareness Project</p></div>;
-    const About = () => <div><h1>About Page</h1><p>About the Project</p></div>;
-    const Strategies = () => <div><h1>Strategies</h1><p>Social Media Strategies</p></div>;
-    const CaseStudies = () => <div><h1>Case Studies</h1><p>Real-world examples</p></div>;
-    const Resources = () => <div><h1>Resources</h1><p>Tools and guides</p></div>;
+    // Pages
+    const Home = () => (
+      <div className="container">
+        <h1 className="heading-1">Welcome to Environmental Awareness Hub</h1>
+        <p className="body-large">Empowering individuals to run sustainable campaigns through social media.</p>
+      </div>
+    );
 
-    // Main App
+    const About = () => (
+      <div className="container">
+        <h1 className="heading-1">About This Project</h1>
+        <p className="body-large">This project provides tools, strategies, and resources for environmental awareness campaigns online.</p>
+      </div>
+    );
+
+    const Strategies = () => (
+      <div className="container">
+        <h1 className="heading-1">Strategies</h1>
+        <p className="body-large">Learn effective social media strategies to promote sustainability and climate action.</p>
+      </div>
+    );
+
+    const CaseStudies = () => (
+      <div className="container">
+        <h1 className="heading-1">Case Studies</h1>
+        <p className="body-large">Explore real-world examples of successful environmental campaigns.</p>
+      </div>
+    );
+
+    const Resources = () => (
+      <div className="container">
+        <h1 className="heading-1">Environmental Resources Hub</h1>
+        <p className="body-large">Curated collection of tools, research, and educational materials to support your campaigns.</p>
+
+        <div className="section">
+          <div className="grid">
+            <div className="card">
+              <h3 className="heading-3">Digital Tools</h3>
+              <ul>
+                <li>Canva - Infographics</li>
+                <li>Adobe Premiere Rush - Video Editing</li>
+                <li>Hootsuite - Social Scheduling</li>
+              </ul>
+              <a href="#" className="btn-primary">Access Tools</a>
+            </div>
+
+            <div className="card">
+              <h3 className="heading-3">Data & Research</h3>
+              <ul>
+                <li>NASA Climate Data</li>
+                <li>EPA Air Quality</li>
+                <li>Our World in Data</li>
+              </ul>
+              <a href="#" className="btn-primary">Access Research</a>
+            </div>
+
+            <div className="card">
+              <h3 className="heading-3">Educational Content</h3>
+              <ul>
+                <li>Lesson Plans</li>
+                <li>Templates</li>
+                <li>Guides</li>
+              </ul>
+              <a href="#" className="btn-primary">View Resources</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <h2 className="heading-2" style={{textAlign:"center"}}>Digital Tools for Environmental Education</h2>
+          <div className="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/6BIYN0sLZwc"
+              title="Digital Tools for Environmental Education and Awareness"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    );
+
     const App = () => (
       <BrowserRouter>
         <Header />
