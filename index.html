@@ -1,166 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Environmental Awareness Through Social Media</title>
-
-  <!-- React & ReactDOM CDN -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.development.js"></script>
-
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background: #f4f9f4; color: #333; }
-    a { text-decoration: none; color: #2e7d32; }
-    a:hover { color: #1b5e20; }
-    header { padding:1rem; background:#2e7d32; color:white; }
-    header nav { display:flex; gap:1rem; flex-wrap:wrap; }
-    .container { max-width:1200px; margin:0 auto; padding:1rem; }
-    .section { margin:2rem 0; }
-    h1,h2,h3 { margin:0 0 1rem 0; }
-    .heading-1 { font-size:2rem; font-weight:700; }
-    .heading-2 { font-size:1.5rem; font-weight:600; }
-    .heading-3 { font-size:1.25rem; font-weight:500; }
-    .body-large { font-size:1.125rem; }
-    .body-medium { font-size:1rem; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; }
-    .card { background:white; padding:1rem; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    .btn-primary, .btn-secondary { display:inline-block; padding:0.5rem 1rem; border-radius:8px; font-weight:600; }
-    .btn-primary { background:#2e7d32; color:white; }
-    .btn-secondary { background:#f4f9f4; color:#2e7d32; border:1px solid #2e7d32; }
-    footer { padding:1rem; background:#1b5e20; color:white; text-align:center; }
-    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
-    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
-    .stats-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap:1rem; }
-    .stat-card { background:#e6f2e6; padding:1rem; border-radius:8px; text-align:center; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Awareness Through Social Media</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="root"></div>
-
-  <script type="text/javascript">
-    const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
-
-    // Header
-    const Header = () => (
-      <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/strategies">Strategies</Link>
-          <Link to="/case-studies">Case Studies</Link>
-          <Link to="/resources">Resources</Link>
+    <!-- Header -->
+    <header class="nav-header">
+        <a href="index.html" class="nav-logo">🌱 EcoSocial</a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="strategies.html" class="nav-link">Strategies</a>
+            <a href="case-studies.html" class="nav-link">Case Studies</a>
+            <a href="resources.html" class="nav-link">Resources</a>
         </nav>
-      </header>
-    );
+    </header>
 
-    // Footer
-    const Footer = () => (
-      <footer>
-        <p>&copy; 2025 Environmental Awareness. All Rights Reserved.</p>
-      </footer>
-    );
-
-    // Pages
-    const Home = () => (
-      <div className="container">
-        <h1 className="heading-1">Welcome to Environmental Awareness Hub</h1>
-        <p className="body-large">Empowering individuals to run sustainable campaigns through social media.</p>
-      </div>
-    );
-
-    const About = () => (
-      <div className="container">
-        <h1 className="heading-1">About This Project</h1>
-        <p className="body-large">This project provides tools, strategies, and resources for environmental awareness campaigns online.</p>
-      </div>
-    );
-
-    const Strategies = () => (
-      <div className="container">
-        <h1 className="heading-1">Strategies</h1>
-        <p className="body-large">Learn effective social media strategies to promote sustainability and climate action.</p>
-      </div>
-    );
-
-    const CaseStudies = () => (
-      <div className="container">
-        <h1 className="heading-1">Case Studies</h1>
-        <p className="body-large">Explore real-world examples of successful environmental campaigns.</p>
-      </div>
-    );
-
-    const Resources = () => (
-      <div className="container">
-        <h1 className="heading-1">Environmental Resources Hub</h1>
-        <p className="body-large">Curated collection of tools, research, and educational materials to support your campaigns.</p>
-
-        <div className="section">
-          <div className="grid">
-            <div className="card">
-              <h3 className="heading-3">Digital Tools</h3>
-              <ul>
-                <li>Canva - Infographics</li>
-                <li>Adobe Premiere Rush - Video Editing</li>
-                <li>Hootsuite - Social Scheduling</li>
-              </ul>
-              <a href="#" className="btn-primary">Access Tools</a>
+    <!-- Main Content -->
+    <div class="page-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content fade-in-up">
+                <h1 class="heading-1">Environmental Awareness Through Social Media</h1>
+                <p class="body-large">Empowering sustainable practices and environmental responsibility through digital channels to create lasting social impact and drive positive change.</p>
+                
+                <img src="https://images.unsplash.com/photo-1622219970016-09f07c1eed36" 
+                     alt="Wind turbines in field representing renewable energy" 
+                     class="hero-image">
+                
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="about.html" class="btn-primary">Explore Our Mission</a>
+                    <a href="strategies.html" class="btn-secondary">View Strategies</a>
+                </div>
             </div>
+        </section>
 
-            <div className="card">
-              <h3 className="heading-3">Data & Research</h3>
-              <ul>
-                <li>NASA Climate Data</li>
-                <li>EPA Air Quality</li>
-                <li>Our World in Data</li>
-              </ul>
-              <a href="#" className="btn-primary">Access Research</a>
+        <!-- Statistics Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="heading-2" style="text-align: center; margin-bottom: 3rem;">
+                    The Power of Digital Environmental Advocacy
+                </h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">3.8B</span>
+                        <span class="stat-label">Social Media Users Worldwide</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">71%</span>
+                        <span class="stat-label">Young Adults on Instagram</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">87%</span>
+                        <span class="stat-label">Gen Z Uses TikTok Daily</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">45%</span>
+                        <span class="stat-label">Learn About Issues Online</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div className="card">
-              <h3 className="heading-3">Educational Content</h3>
-              <ul>
-                <li>Lesson Plans</li>
-                <li>Templates</li>
-                <li>Guides</li>
-              </ul>
-              <a href="#" className="btn-primary">View Resources</a>
+        <!-- Mission Overview -->
+        <section class="section" style="background: var(--bg-section);">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem;">
+                    <div>
+                        <h2 class="heading-2">Our Mission</h2>
+                        <p class="body-large">Environmental Awareness Through Social Media is a capstone project that aims to utilize the potential of digital channels to empower sustainable practices and make people environmentally responsible.</p>
+                        
+                        <div style="margin-top: 2rem;">
+                            <h3 class="heading-3">Key Impact Areas</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                    <span style="color: var(--accent-text); margin-right: 0.5rem; font-size: 1.2rem;">🌱</span>
+                                    <span class="body-medium">Educational content distribution</span>
+                                </li>
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                    <span style="color: var(--accent-text); margin-right: 0.5rem; font-size: 1.2rem;">👥</span>
+                                    <span class="body-medium">Youth audience engagement</span>
+                                </li>
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                    <span style="color: var(--accent-text); margin-right: 0.5rem; font-size: 1.2rem;">🎯</span>
+                                    <span class="body-medium">Interactive community programs</span>
+                                </li>
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start;">
+                                    <span style="color: var(--accent-text); margin-right: 0.5rem; font-size: 1.2rem;">🌍</span>
+                                    <span class="body-medium">Global policy change advocacy</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
+                             alt="Hands holding plant seedling"
+                             style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div className="section">
-          <h2 className="heading-2" style={{textAlign:"center"}}>Digital Tools for Environmental Education</h2>
-          <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/6BIYN0sLZwc"
-              title="Digital Tools for Environmental Education and Awareness"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    );
+        <!-- Environmental Data Highlights -->
+        <section class="section">
+            <div class="container">
+                <h2 class="heading-2" style="text-align: center; margin-bottom: 3rem;">
+                    Current Environmental & Digital Landscape
+                </h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="heading-3" style="color: var(--accent-text);">Climate Reality</h3>
+                        <div style="margin-top: 1rem;">
+                            <p class="body-medium"><strong>+1.1°C</strong> global temperature increase since 1880</p>
+                            <p class="body-medium"><strong>421 ppm</strong> CO2 concentration in May 2024</p>
+                            <p class="body-medium"><strong>3.4mm/year</strong> sea level rise</p>
+                            <p class="body-medium"><strong>13%</strong> Arctic ice decline per decade</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="heading-3" style="color: var(--accent-text);">Social Media Reach</h3>
+                        <div style="margin-top: 1rem;">
+                            <p class="body-medium"><strong>2.35B</strong> Instagram monthly users</p>
+                            <p class="body-medium"><strong>1.05B</strong> TikTok monthly users</p>
+                            <p class="body-medium"><strong>450M</strong> Twitter monthly users</p>
+                            <p class="body-medium"><strong>2.7B</strong> YouTube monthly users</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="heading-3" style="color: var(--accent-text);">Youth Engagement</h3>
+                        <div style="margin-top: 1rem;">
+                            <p class="body-medium"><strong>83%</strong> of Gen Z worried about climate change</p>
+                            <p class="body-medium"><strong>71%</strong> get news from social media</p>
+                            <p class="body-medium"><strong>73%</strong> willing to pay more for sustainable products</p>
+                            <p class="body-medium"><strong>32%</strong> participated in online environmental campaigns</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    const App = () => (
-      <BrowserRouter>
-        <Header />
-        <div style={{ padding: "2rem" }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/strategies" element={<Strategies />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/resources" element={<Resources />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
-    );
+        <!-- Call to Action -->
+        <section class="section" style="background: var(--accent-wash); text-align: center;">
+            <div class="container">
+                <h2 class="heading-2">Ready to Make an Impact?</h2>
+                <p class="body-large" style="max-width: 600px; margin: 0 auto 2rem;">
+                    Explore our comprehensive strategies, learn from successful case studies, and access valuable resources to amplify your environmental message through social media.
+                </p>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="strategies.html" class="btn-primary">Discover Strategies</a>
+                    <a href="case-studies.html" class="btn-secondary">View Case Studies</a>
+                    <a href="resources.html" class="btn-secondary">Access Resources</a>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-  </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Environmental Awareness Through Social Media</h4>
+                    <p class="body-medium" style="color: var(--text-secondary);">
+                        Empowering sustainable practices through digital channels to create lasting social impact and environmental responsibility.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="strategies.html">Strategies</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="resources.html">Resources</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#climate-data">Climate Data</a>
+                    <a href="#research">Research Papers</a>
+                    <a href="#tools">Digital Tools</a>
+                    <a href="#campaigns">Campaign Examples</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#tiktok">TikTok</a>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#youtube">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Environmental Awareness Through Social Media. Capstone Project - Digital Media & Environmental Advocacy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
